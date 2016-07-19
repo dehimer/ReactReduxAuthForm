@@ -9,12 +9,13 @@ html {
 body {
 	position: absolute;
 	min-height: 100%;
-	display: flex;
 	padding: 0px;
 	margin: 0px;
-	overflow-y: auto;
+	width: 100%;
 }
 
 #root {
 	display: flex;
+	width: 100%;
+	min-height: 100%;
 }
