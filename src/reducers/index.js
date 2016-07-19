@@ -1,6 +1,12 @@
 import { combineReducers } from 'redux'
-import emptyReducer from './emptyReducer'
+import current_stage from './current_stage'
+import stages from './stages'
+import cities from './cities'
+import countries from './countries'
 
 export default combineReducers({
-  emptyReducer
+  cities,
+  countries,
+  current_stage,
+  stages
 })

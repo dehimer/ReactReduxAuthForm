@@ -1,9 +1,22 @@
-export const NOTHING = 'NOTHING';
-export const SENT_EMAIL = 'SENT_EMAIL';
+export const SELECT_COUNTRY = 'SELECT_COUNTRY';
+export const SELECT_CITY = 'SELECT_CITY';
+export const SWITCH_STAGE = 'SWITCH_STAGE';
 
-export function nothing (data) {
+export function switchStage (stage) {
 	return {
-		type: NOTHING,
-		payload: data
+		type: SWITCH_STAGE,
+		payload: stage
+	}
+}
+
+export function selectCities () {
+	return {
+		type: SELECT_CITY
+	}
+}
+
+export function selectCountries () {
+	return {
+		type: SELECT_COUNTRY
 	}
 }
