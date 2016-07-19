@@ -1,0 +1,12 @@
+.prevnext {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 150px;
+}
+
+.prevnext_button {
+	padding: 7px;
+	min-width: 130px;
+	text-align: center;
+	min-width: 16px;
+}

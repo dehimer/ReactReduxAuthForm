@@ -1,0 +1,16 @@
+.stages {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 16px;
+	width: 175px;
+}
+
+.stage {
+	padding: 10px;
+	min-width: 37px;
+	text-align: center;
+}
+
+.unactive {
+	color: #bbbbbb;
+}
