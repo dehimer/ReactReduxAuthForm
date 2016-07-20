@@ -1,0 +1,46 @@
+.label {
+	margin-bottom: 40px;
+}
+
+.imgs {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 16px;
+
+	justify-content: center; /* align horizontal */
+	align-items: center;
+}
+
+.wrapper {
+	margin: auto;
+	margin-left: 16px;
+}
+
+.img_wrapper {
+
+	position:relative;
+
+	display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    margin-bottom: 16px;
+}
+.img {
+	flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+}
+
+.img_selected {
+	border: 3px solid #ff9800;
+}
+
+.message {
+	position: absolute;
+	display: block;
+	color: red;
+	height: 0px;
+	width: 100%;
+	clear:both;
+}

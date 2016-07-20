@@ -7,6 +7,18 @@ import configureStore from './store/configureStore'
 import App from './components/App';
 
 const initialAppState = {
+	countries: {
+		'1': 'Ukraine',
+		'2': 'Germany',
+		'3': 'France',
+		'4': 'Spain',
+		'5': 'Sweden',
+		'6': 'USA',
+		'7': 'Canada',
+		'8': 'Moldova',
+		'9': 'Belarus',
+		'10': 'Poland'
+	},
 	cities: {
 		'1': {'country': 1, 'name': 'Ukraine'},
 		'2': {'country': 3, 'name': 'Paris'},
@@ -27,18 +39,6 @@ const initialAppState = {
 		'109': {'country': 1, 'name': 'Черновцы'},
 		'299': {'country': 1, 'name': 'Чернигов'},
 		'333': {'country': 1, 'name': 'Чернигов'}
-	},
-	countries: {
-		'1': 'Ukraine',
-		'2': 'Germany',
-		'3': 'France',
-		'4': 'Spain',
-		'5': 'Sweden',
-		'6': 'USA',
-		'7': 'Canada',
-		'8': 'Moldova',
-		'9': 'Belarus',
-		'10': 'Poland'
 	},
 	stages: [1, 2, 3, 4]
 };

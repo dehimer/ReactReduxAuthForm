@@ -1,0 +1,27 @@
+.label {
+	margin-bottom: 40px;
+}
+
+.input {
+	display: block;
+	padding: 10px;
+	border: none;
+	width: 220px;
+}
+
+.socialnetworks {
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
+	height: 150px;
+}
+
+.socialnetwork {
+	display: flex;
+	justify-content:space-between;
+	width: 360px;
+}
+
+.socialnetwork_label {
+	margin: auto 0;
+}

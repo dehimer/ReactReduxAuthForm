@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	padding: 0px;
 	margin: 0px;
@@ -33,3 +37,37 @@ body {
 .root {
 	margin: auto;
 }
+
+
+:global input[type=checkbox] {
+	width: 13px;
+	height: 13px;
+	/*margin-right: 8px;*/
+	margin-top: -5px;
+	cursor: pointer;
+	font-size: 10px;
+	color: white;
+	overflow: hidden;
+}
+
+
+:global input[type=checkbox]:after {
+
+	display: inline-block;
+	content: ' ';
+	background-color: #09f;
+	visibility: visible;
+}
+
+:global input[type=checkbox]:checked:after {
+	content: "\2714";
+	width: 10px;
+	height: 12px;
+	border-radius: 2px;
+	padding-left: 2px;
+}
+
+:global .noselect {
+ 
+  user-select: none;
+};
