@@ -1,0 +1,49 @@
+.root {
+	display: flex;
+	padding: 24px;
+	background-color: white;
+
+	min-width: 500px;
+    justify-content: space-between;
+    margin-left: -50%;
+
+    margin-bottom: 32px;
+}
+
+.left_part {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.name {
+	font-size:20px;
+	color: #333;
+	margin-bottom: 15px;
+}
+
+.img_wrapper {
+
+	position:relative;
+
+	display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    min-width: 200px;
+}
+.img {
+	flex-shrink: 0;
+    height: 195px;
+    width: 200px;
+}
+
+.socialnetwork {
+	display: flex;
+}
+
+.socialnetwork_name {
+	color: #03f;
+	margin-right: 5px;
+}

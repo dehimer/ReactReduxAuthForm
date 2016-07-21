@@ -51,7 +51,7 @@ export class Content extends React.Component {
 				content = <CatsDogForm animal={this.props.authinfo.animal} onAnimalCnange={animal => this.props.updateAuthInfoAnimal(animal)}/>;
 				break;
 			case 4:
-				content = <EndForm authinfo={this.props.authinfo} resetAuthInfo={ () => this.props.resetAuthInfo() }/>;
+				content = <EndForm authinfo={this.props.authinfo} countries={ this.props.countries } resetAuthInfo={ () => this.props.resetAuthInfo() }/>;
 				break;
 			default:
 				content = '';
