@@ -10,6 +10,7 @@ import './app.css'
 import App from './components/App';
 
 const initialAppState = {
+	current_form_state: false,
 	countries: {
 		'1': 'Ukraine',
 		'2': 'Germany',

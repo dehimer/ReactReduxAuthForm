@@ -4,11 +4,13 @@ import stages from './stages'
 import cities from './cities'
 import countries from './countries'
 import authinfo from './authinfo'
+import current_form_state from './current_form_state'
 
 export default combineReducers({
   cities,
   countries,
   current_stage,
   stages,
-  authinfo
+  authinfo,
+  current_form_state
 })

@@ -8,6 +8,8 @@ export const UPDATE_AUTHINFO_CITY = 'UPDATE_AUTHINFO_CITY';
 export const UPDATE_AUTHINFO_COUNTRY = 'UPDATE_AUTHINFO_COUNTRY';
 export const UPDATE_AUTHINFO_SOCIALNETWORKS = 'UPDATE_AUTHINFO_SOCIALNETWORKS';
 export const UPDATE_AUTHINFO_ANIMAL = 'UPDATE_AUTHINFO_ANIMAL';
+export const UPDATE_CURRENT_FORM_STATE = 'UPDATE_CURRENT_FORM_STATE';
+
 
 export function switchStage (stage) {
 	return {
@@ -74,5 +76,12 @@ export function updateAuthInfoAnimal(animal) {
 	return {
 		type: UPDATE_AUTHINFO_ANIMAL,
 		payload: animal
+	}
+}
+
+export function updateCurrentFormState(state) {
+	return {
+		type: UPDATE_CURRENT_FORM_STATE,
+		payload: state
 	}
 }

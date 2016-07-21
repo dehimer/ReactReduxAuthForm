@@ -12,7 +12,16 @@ import CatsDogForm from 'components/Steps/CatsDogForm';
 import EndForm from 'components/Steps/EndForm';
 
 
-import { switchStage, resetAuthInfo, updateAuthInfoName, updateAuthInfoEmail, updateAuthInfoCountry, updateAuthInfoCity, updateAuthInfoSocialNetworks, updateAuthInfoAnimal } from 'actions'
+import {
+	switchStage,
+	resetAuthInfo,
+	updateAuthInfoName,
+	updateAuthInfoEmail,
+	updateAuthInfoCountry,
+	updateAuthInfoCity,
+	updateAuthInfoSocialNetworks,
+	updateAuthInfoAnimal,
+	updateCurrentFormState } from 'actions'
 import styles from './index.css';
 
 
@@ -21,14 +30,17 @@ export class Content extends React.Component {
     render() {
 
 		let content;
+
 		switch(this.props.current_stage)
 		{
 			case 0:
 				content = <UserNameEmailForm
-					name={this.props.authinfo.name}
-					email={this.props.authinfo.email}
+					name={ this.props.authinfo.name }
+					email={ this.props.authinfo.email }
 					onNameChange={ name => this.props.updateAuthInfoName(name) }
 					onEmailChange={ email => this.props.updateAuthInfoEmail(email) }
+					current_form_state={ this.props.current_form_state }
+					onStateChange={ state => this.props.updateCurrentFormState(state) }
 				/>;
 				break;
 			case 1:
@@ -39,19 +51,34 @@ export class Content extends React.Component {
 					cities={ this.props.cities }
 					onCountryChange={ country => this.props.updateAuthInfoCountry(country) }
 					onCityChange={ city => this.props.updateAuthInfoCity(city) }
+					current_form_state={ this.props.current_form_state }
+					onStateChange={ state => this.props.updateCurrentFormState(state) }
 				/>;
 				break;
 			case 2:
 				content = <SocialNetworksForm
 					socialnetworks={ this.props.authinfo.socialnetworks }
 					onSocialnetworksChange={ socialnetworks => this.props.updateAuthInfoSocialNetworks(socialnetworks) }
+					current_form_state={ this.props.current_form_state }
+					onStateChange={ state => this.props.updateCurrentFormState(state) }
 				/>;
 				break;
 			case 3:
-				content = <CatsDogForm animal={this.props.authinfo.animal} onAnimalCnange={animal => this.props.updateAuthInfoAnimal(animal)}/>;
+				content = <CatsDogForm
+					animal={this.props.authinfo.animal}
+					onAnimalCnange={ animal => this.props.updateAuthInfoAnimal(animal) }
+					current_form_state={ this.props.current_form_state }
+					onStateChange={ state => this.props.updateCurrentFormState(state) }
+				/>;
 				break;
 			case 4:
-				content = <EndForm authinfo={this.props.authinfo} countries={ this.props.countries } resetAuthInfo={ () => this.props.resetAuthInfo() }/>;
+				content = <EndForm
+					authinfo={ this.props.authinfo }
+					countries={ this.props.countries }
+					resetAuthInfo={ () => this.props.resetAuthInfo() }
+					current_form_state={ this.props.current_form_state }
+					onStateChange={ state => this.props.updateCurrentFormState(state) }
+				/>;
 				break;
 			default:
 				content = '';
@@ -91,7 +118,9 @@ function mapStateToProps(state) {
 		current_stage: state.current_stage,
 		countries: state.countries,
 		cities: state.cities,
-		authinfo: state.authinfo
+		authinfo: state.authinfo,
+
+		current_form_state: state.current_form_state
 	}
 }
 
@@ -106,7 +135,9 @@ function mapDispatchToProps(dispatch) {
 		updateAuthInfoCountry: bindActionCreators(updateAuthInfoCountry, dispatch),
 		updateAuthInfoCity: bindActionCreators(updateAuthInfoCity, dispatch),
 		updateAuthInfoSocialNetworks: bindActionCreators(updateAuthInfoSocialNetworks, dispatch),
-		updateAuthInfoAnimal: bindActionCreators(updateAuthInfoAnimal, dispatch)
+		updateAuthInfoAnimal: bindActionCreators(updateAuthInfoAnimal, dispatch),
+
+		updateCurrentFormState: bindActionCreators(updateCurrentFormState, dispatch)
 		
 	}
 }

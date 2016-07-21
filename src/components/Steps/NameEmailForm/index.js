@@ -6,6 +6,7 @@ import styles from './index.css';
 
 
 export default class UserNameEmail extends React.Component {
+
 	render() {
 
 		const username = this.props.name || '';

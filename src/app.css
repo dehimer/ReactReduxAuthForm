@@ -57,14 +57,14 @@ body {
 	display: block;
 	padding: 10px;
 	border: none;
-	width: 250px;
+	width: 280px;
 }
 
 :global select {
 	display: block;
 	padding: 10px;
 	border: none;
-	width: 250px;
+	width: 280px;
 }
 
 :global input.error {
