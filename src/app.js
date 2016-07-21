@@ -4,6 +4,9 @@ import { Provider } from 'react-redux'
 
 import configureStore from './store/configureStore'
 
+
+import './app.css'
+
 import App from './components/App';
 
 const initialAppState = {

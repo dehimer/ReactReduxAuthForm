@@ -17,7 +17,7 @@ export default class SocialNetworksForm extends React.Component {
 
         return <div>
 
-			<div className={ styles.label }>
+			<div className={ 'label' }>
 				3. Отметьте социальные сети
 			</div>
 
@@ -34,6 +34,8 @@ export default class SocialNetworksForm extends React.Component {
 							socialnetwork.link = socialnetworks_fromprop.link;
 						}
 
+						const need_fill = (socialnetwork.selected && !socialnetwork.link);
+
 						return <div key={ socialnetwork.id } className={ styles.socialnetwork }>
 							<span className={ styles.socialnetwork_label }>
 								
@@ -46,18 +48,27 @@ export default class SocialNetworksForm extends React.Component {
 									} }
 									checked={ socialnetwork.selected }
 									/>
-								{ socialnetwork.name }
+								<span>
+									{ socialnetwork.name }
+								</span>
 							</span>
-							<input
-								type='text'
-								value={ socialnetwork.link || ''}
-								placeholder={ socialnetwork.placeholder }
-								className={ classNames(styles.input, 'rounded_corners', 'shadow', 'white_bg_color') }
-								style={ {display:socialnetwork.selected?'inline':'none', padding:'5px'} }
-								onChange={ e => {
-									socialnetwork.link = e.target.value;
-									this.props.onSocialnetworksChange(socialnetworks);
-								} }/>
+
+							<div className={ 'input_block' }>
+								<input
+									type='text'
+									value={ socialnetwork.link || ''}
+									placeholder={ socialnetwork.placeholder }
+									className={ classNames(styles.input, 'rounded_corners', 'shadow', 'white_bg_color', {'red_border_color':need_fill}) }
+									style={ {display:socialnetwork.selected?'inline':'none'} }
+									onChange={ e => {
+										socialnetwork.link = e.target.value;
+										this.props.onSocialnetworksChange(socialnetworks);
+									} }/>
+								<div className={ 'red_text_color' } style={ {display:!need_fill?'none':'block'} }>
+									<spam style={ {padding:'0px 5px'} }>&mdash;</spam>укажите адрес страницы
+								</div>
+
+							</div>
 						</div>
 					})
 				}

@@ -1,27 +1,27 @@
-.label {
-	margin-bottom: 40px;
-}
 
 .input {
-	display: block;
-	padding: 10px;
-	border: none;
 	width: 220px;
+	padding: 8px;
 }
 
 .socialnetworks {
 	display: flex;
 	flex-direction: column;
 	justify-content:space-between;
+
 	height: 150px;
 }
 
 .socialnetwork {
 	display: flex;
 	justify-content:space-between;
-	width: 360px;
+	align-items: center;
+	height: 50px;
+	width: 800px;
 }
 
 .socialnetwork_label {
+	display: flex;
+	align-items: center;
 	margin: auto 0;
 }

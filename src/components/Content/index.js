@@ -5,14 +5,14 @@ import { connect } from 'react-redux'
 const classNames = require('classnames');
 
 
-import UserNameEmailForm from 'components/UserNameEmailForm';
-import CountryCityForm from 'components/CountryCityForm';
-import SocialNetworksForm from 'components/SocialNetworksForm';
-import CatsDogForm from 'components/CatsDogForm';
-import EndForm from 'components/EndForm';
+import UserNameEmailForm from 'components/Steps/NameEmailForm';
+import CountryCityForm from 'components/Steps/CountryCityForm';
+import SocialNetworksForm from 'components/Steps/SocialNetworksForm';
+import CatsDogForm from 'components/Steps/CatsDogForm';
+import EndForm from 'components/Steps/EndForm';
 
 
-import { switchStage, resetAuthInfo, updateAuthInfoCountry, updateAuthInfoCity, updateAuthInfoSocialNetworks, updateAuthInfoAnimal } from 'actions'
+import { switchStage, resetAuthInfo, updateAuthInfoName, updateAuthInfoEmail, updateAuthInfoCountry, updateAuthInfoCity, updateAuthInfoSocialNetworks, updateAuthInfoAnimal } from 'actions'
 import styles from './index.css';
 
 
@@ -27,8 +27,8 @@ export class Content extends React.Component {
 				content = <UserNameEmailForm
 					name={this.props.authinfo.name}
 					email={this.props.authinfo.email}
-					onNameChange={ name => this.props.updateAuthinfo({name}) }
-					onEmailChange={ email => this.props.updateAuthinfo({email}) }
+					onNameChange={ name => this.props.updateAuthInfoName(name) }
+					onEmailChange={ email => this.props.updateAuthInfoEmail(email) }
 				/>;
 				break;
 			case 1:
@@ -59,7 +59,7 @@ export class Content extends React.Component {
 		}
 
         return <div>
-			<div className={ styles.stages }>
+			<div className={ styles.stages } style={ {display:this.props.current_stage === 4?'none':''} }>
 				{
 					this.props.stages.map((stage, index) => {
 
@@ -99,6 +99,10 @@ function mapDispatchToProps(dispatch) {
 	return {
 		switchStage: bindActionCreators(switchStage, dispatch),
 		resetAuthInfo: bindActionCreators(resetAuthInfo, dispatch),
+
+		updateAuthInfoName: bindActionCreators(updateAuthInfoName, dispatch),
+		updateAuthInfoEmail: bindActionCreators(updateAuthInfoEmail, dispatch),
+
 		updateAuthInfoCountry: bindActionCreators(updateAuthInfoCountry, dispatch),
 		updateAuthInfoCity: bindActionCreators(updateAuthInfoCity, dispatch),
 		updateAuthInfoSocialNetworks: bindActionCreators(updateAuthInfoSocialNetworks, dispatch),

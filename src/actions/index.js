@@ -2,6 +2,8 @@ export const SELECT_COUNTRY = 'SELECT_COUNTRY';
 export const SELECT_CITY = 'SELECT_CITY';
 export const SWITCH_STAGE = 'SWITCH_STAGE';
 export const RESET_AUTHINFO = 'RESET_AUTHINFO';
+export const UPDATE_AUTHINFO_NAME = 'UPDATE_AUTHINFO_NAME';
+export const UPDATE_AUTHINFO_EMAIL = 'UPDATE_AUTHINFO_EMAIL';
 export const UPDATE_AUTHINFO_CITY = 'UPDATE_AUTHINFO_CITY';
 export const UPDATE_AUTHINFO_COUNTRY = 'UPDATE_AUTHINFO_COUNTRY';
 export const UPDATE_AUTHINFO_SOCIALNETWORKS = 'UPDATE_AUTHINFO_SOCIALNETWORKS';
@@ -30,6 +32,20 @@ export function resetAuthInfo (authinfo) {
 	return {
 		type: RESET_AUTHINFO,
 		payload: authinfo
+	}
+}
+
+export function updateAuthInfoName (name) {
+	return {
+		type: UPDATE_AUTHINFO_NAME,
+		payload: name
+	}
+}
+
+export function updateAuthInfoEmail (email) {
+	return {
+		type: UPDATE_AUTHINFO_EMAIL,
+		payload: email
 	}
 }
 

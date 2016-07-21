@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 const classNames = require('classnames');
 
-import { switchStage } from 'actions'
+import { switchStage, resetAuthInfo } from 'actions'
 import styles from './index.css';
 
 
@@ -117,7 +117,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-		switchStage: bindActionCreators(switchStage, dispatch)
+		switchStage: bindActionCreators(switchStage, dispatch),
+		resetAuthInfo: bindActionCreators(resetAuthInfo, dispatch)
 	}
 }
 

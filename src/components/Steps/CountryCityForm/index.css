@@ -1,0 +1,17 @@
+.custom_select {
+
+	appearance: none;
+	/*color: #ccc;*/
+	color: inherit;
+	padding-left: 10px
+}
+
+:global select:focus{
+    color:inherit;
+}
+
+.input_block {
+	display: flex;
+	align-items: center;
+	width: 600px;
+}
