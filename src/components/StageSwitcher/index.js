@@ -97,7 +97,12 @@ export class StageSwitcher extends React.Component {
 							blocked = true;
 						}
 
-						return <div key={ index } data-dir={ button.dir } data-blocked={ blocked } className={ className } onClick={ ::this.handleClick } style={ {opacity:blocked?0.5:1, minWidth:button.name?'130px':'16px'} }>
+						return <div key={ index }
+							data-dir={ button.dir }
+							data-blocked={ blocked }
+							className={ className }
+							onClick={ ::this.handleClick }
+							style={ {opacity:blocked?0.5:1, minWidth:button.name?'130px':'16px'} }>
 							{ button.name }
 						</div>
 					})
